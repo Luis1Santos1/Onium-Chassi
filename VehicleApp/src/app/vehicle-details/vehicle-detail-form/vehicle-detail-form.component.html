@@ -1,0 +1,23 @@
+<form #form="ngForm" (submit)="onSubmit(form)"
+[class.submitted] ="service.formSubmitted" novalidate
+autocomplete="off">
+  <input type="hidden" name="id" [value]="service.formData.id">
+  <div class="mb-3">
+    <label>Chassis</label>
+    <input class="form-control for-control-lg"
+      placeholder="Enter the 17 characters of the chassis"
+      #chassi="ngModel" name="chassi"
+      [(ngModel)]="service.formData.chassi" required minlength="17" maxlength="17">
+  </div>
+
+  <div class="mb-3">
+    <label>Vehicle Model</label>
+    <input class="form-control for-control-lg"
+      placeholder="Enter the vehicle model"
+      #chassi="ngModel" name="model"
+      [(ngModel)]="service.formData.model" required>
+  </div>
+<div class="d-grid">
+  <button class="btn btn-lg btn-success" type="submit">Submit</button>
+</div>
+</form>
